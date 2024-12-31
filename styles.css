@@ -1,0 +1,44 @@
+#cont{
+    display: flex;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
+
+#keyboard{
+    padding: 2%;
+    width: 50%;
+}
+
+#inputDiv{
+    padding: 2%;
+    width: 100%;
+    border-left: 1px solid black;
+}
+
+#outputDiv{
+    width: 100%;
+    padding: 2%;
+    text-align: center;
+    background-color: #f0f0f0d2;
+}
+
+#input{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    font-size: 2em;
+}
+
+#output{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    font-size: 2em;
+}
+
+#currentMode{
+    text-align: center;
+}
