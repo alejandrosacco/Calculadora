@@ -20,11 +20,8 @@ function operacion(inputValue){
     let aux;
     if(inputValue.indexOf('(') != -1){
         operando1 = inputValue.slice(inputValue.indexOf('(')+1, inputValue.lastIndexOf(')'));
-        console.log(operando1);
         aux = inputValue.slice(inputValue.lastIndexOf(')')+1, inputValue.lastIndexOf(')')+2);
-        console.log(aux);
         operando2 = inputValue.slice(inputValue.lastIndexOf(')')+2);
-        console.log(operando2);
         switch(aux){
             case '+':
                 return operacion(operando1) + operacion(operando2);
@@ -39,22 +36,34 @@ function operacion(inputValue){
     else if(inputValue.indexOf('+') != -1){
         operando1 = inputValue.slice(0, inputValue.indexOf('+'));
         operando2 = inputValue.slice(inputValue.indexOf('+')+1);
-        return operacion(operando1) + operacion(operando2);
+        if(operando1 != '')
+            return operacion(operando1) + operacion(operando2);
+        else
+            return parseFloat(output.value) + operacion(operando2);
     }
     else if(inputValue.indexOf('-') != -1){
         operando1 = inputValue.slice(0, inputValue.indexOf('-'));
         operando2 = inputValue.slice(inputValue.indexOf('-')+1);
-        return operacion(operando1) - operacion(operando2);
+        if(operando1 != '')
+            return operacion(operando1) - operacion(operando2);
+        else
+            return parseFloat(output.value) - operacion(operando2);
     }
     else if(inputValue.indexOf('*') != -1){
         operando1 = inputValue.slice(0, inputValue.indexOf('*'));
         operando2 = inputValue.slice(inputValue.indexOf('*')+1);
-        return operacion(operando1) * operacion(operando2);
+        if(operando1 != '')
+            return operacion(operando1) * operacion(operando2);
+        else
+            return parseFloat(output.value) * operacion(operando2);
     }
     else if(inputValue.indexOf('/') != -1){
         operando1 = inputValue.slice(0, inputValue.indexOf('/'));
         operando2 = inputValue.slice(inputValue.indexOf('/')+1);
-        return operacion(operando1) / operacion(operando2);
+        if(operando1 != '')
+            return operacion(operando1) / operacion(operando2);
+        else
+            return parseFloat(output.value) / operacion(operando2);
     }
     else
         return parseFloat(inputValue);
@@ -87,6 +96,14 @@ letters.forEach(letter => {
     });
 });
 
+document.getElementById('pi').addEventListener('click', ()=>{
+    input.value += 'pi';
+});
+
+document.getElementById('e').addEventListener('click', ()=>{
+    input.value += 'e';
+});
+
 operators.forEach(operator => {
     operator.addEventListener('click', () => {
         input.value += operator.innerHTML;
@@ -111,14 +128,12 @@ functions.forEach(func => {
             switch(func.id){
                 case 'exp':
                     output.value = "\\[\e^{(" + inputValue + ")}\\]";
-                    console.log(output.value);
                 break;
                 case 'log':
                     output.value = "\\[\log({" + inputValue + "})\\]";
                 break;
                 case 'cos':
                     output.value = "\\[\cos({" + inputValue + "})\\]";
-                    console.log(output.value);
                 break;
                 case 'sen':
                     output.value = "\\[\sen({" + inputValue + "})\\]";
@@ -131,7 +146,6 @@ functions.forEach(func => {
                 break;
                 case 'exp2':
                     output.value = "\\(" + inputValue + "^2\\)";
-                    console.log(output.value);
                 break;
                 case 'exp3':
                     output.value = "\\(" + inputValue + "^3\\)";
@@ -148,32 +162,32 @@ functions.forEach(func => {
         else{
             switch(func.id){
                 case 'exp':
-                    output.value = Math.exp(inputValue);
+                    output.value = Math.exp(operacion(inputValue));
                 break;
                 case 'log':
-                    output.value = Math.log(inputValue);
+                    output.value = Math.log(operacion(inputValue));
                 break;
                 case 'cos':
-                    output.value = Math.cos(inputValue);
+                    output.value = Math.cos(operacion(inputValue));
                 break;
                 case 'sen':
-                    output.value = Math.sin(inputValue);
+                    output.value = Math.sin(operacion(inputValue));
                 break;
                 case 'tan':
-                    output.value = Math.tan(inputValue);
+                    output.value = Math.tan(operacion(inputValue));
                 break;
                 case 'sqrt':
-                    output.value = Math.sqrt(inputValue);
+                    output.value = Math.sqrt(operacion(inputValue));
                 break;
                 case 'exp2':
-                    output.value = Math.pow(inputValue, 2);
+                    output.value = Math.pow(operacion(inputValue), 2);
                 break;
                 case 'exp3':
-                    output.value = Math.pow(inputValue, 3);
+                    output.value = Math.pow(operacion(inputValue), 3);
                 break;
                 case 'expy':
                     if(xy){
-                        output.value = Math.pow(output.value, inputValue);
+                        output.value = Math.pow(output.value, operacion(inputValue));
                     }
                     else
                         break;
@@ -209,7 +223,7 @@ document.getElementById('calc').addEventListener('click', () => {
 });
 
 document.getElementById('test').addEventListener('click', ()=>{
-
+    console.log(input.value.slice(0,1));
 })
 
 /**************************************************************************************/
