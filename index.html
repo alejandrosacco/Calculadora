@@ -8,73 +8,75 @@
     <title>Calculator</title>
 </head>
 <body>
-    <div id="cont">
-        <div id="keyboard">
-            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                <div class="btn-group me-2" role="group" aria-label="First group" style="width: 100%">
-                    <button id="1" type="button" class="btn btn-light number">1</button>
-                    <button id="2" type="button" class="btn btn-light number">2</button>
-                    <button id="3" type="button" class="btn btn-light number">3</button>
-                    <button id="4" type="button" class="btn btn-light number">4</button>
-                    <button id="5" type="button" class="btn btn-light number">5</button>
-                    <button id="6" type="button" class="btn btn-light number">6</button>
-                    <button id="7" type="button" class="btn btn-light number">7</button>
-                    <button id="8" type="button" class="btn btn-light number">8</button>
-                    <button id="9" type="button" class="btn btn-light number">9</button>
-                    <button id="0" type="button" class="btn btn-light number">0</button>              
-                </div>
-                <div class="btn-group me-2" role="group" aria-label="Second group" style="width: 100%">
-                    <button id="a" type="button" class="btn btn-light letter">a</button>
-                    <button id="b" type="button" class="btn btn-light letter">b</button>
-                    <button id="c" type="button" class="btn btn-light letter">c</button>
-                    <button id="d" type="button" class="btn btn-light letter">d</button>
-                    <button id="x" type="button" class="btn btn-light letter">x</button>
-                    <button id="y" type="button" class="btn btn-light letter">y</button>
-                    <button id="z" type="button" class="btn btn-light letter">z</button>
-                    <button id="w" type="button" class="btn btn-light letter">w</button>
-                </div>
-                <div class="btn-group me-2" role="group" aria-label="Third group" style="width: 100%">
-                    <button id="suma" type="button" class="btn btn-light op">+</button>
-                    <button id="resta" type="button" class="btn btn-light op">-</button>
-                    <button id="mult" type="button" class="btn btn-light op">*</button>
-                    <button id="division" type="button" class="btn btn-light op">/</button>
-                    <button id="par-left" type="button" class="btn btn-light aux">(</button>
-                    <button id="par-right" type="button" class="btn btn-light aux">)</button>
-                    <button id="par-right" type="button" class="btn btn-light aux">.</button>
-                </div>
-                <div class="btn-group me-2" role="group" aria-label="Fourth group" style="width: 100%">
-                    <button id="exp" type="button" class="btn btn-light function">\[e^{x}\]</button>
-                    <button id="log" type="button" class="btn btn-light function">\[log({x})\]</button>
-                    <button id="cos" type="button" class="btn btn-light function">\[cos({x})\]</button>
-                    <button id="sen" type="button" class="btn btn-light function">\[sen({x})\]</button>
-                    <button id="tan" type="button" class="btn btn-light function">\[tan({x})\]</button>
-                    <button id="sqrt" type="button" class="btn btn-light function">\[\sqrt{x}\]</button>
-                    <button id="exp2" type="button" class="btn btn-light function">\(x^2\)</button>
-                    <button id="exp3" type="button" class="btn btn-light function">\(x^3\)</button>
-                    <button id="expy" type="button" class="btn btn-light function">\(x^y\)</button>
-                </div>
-                <div class="btn-group me-2" role="group" aria-label="Fifth group" style="width: 100%">
-                    <button id="calc" type="button" class="btn btn-light">=</button>
-                    <button id="clear" type="button" class="btn btn-light">C</button>
-                    <button id="erase" type="button" class="btn btn-light">E</button>
-                    <button id="test" type="button" class="btn btn-light">test</button>
-                </div>
-                <div class="btn-group me-2" role="group" aria-label="Sixth group" style="width: 100%">
-                    <button id="display" type="button" class="btn btn-light">Display</button>
-                    <button id="calculate" type="button" class="btn btn-light">Calculate</button>
+    <main>
+        <div id="cont">
+            <div id="inputDiv">
+                <output type="text" id="input">
+            </div>
+            <div id="outputDiv" class="container">
+                <output type="text" id="output">
+            </div>
+            <div id="keyboard">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group me-2" role="group" aria-label="First group" style="width: 100%">
+                        <button id="1" type="button" class="btn btn-light number">1</button>
+                        <button id="2" type="button" class="btn btn-light number">2</button>
+                        <button id="3" type="button" class="btn btn-light number">3</button>
+                        <button id="4" type="button" class="btn btn-light number">4</button>
+                        <button id="5" type="button" class="btn btn-light number">5</button>
+                        <button id="6" type="button" class="btn btn-light number">6</button>
+                        <button id="7" type="button" class="btn btn-light number">7</button>
+                        <button id="8" type="button" class="btn btn-light number">8</button>
+                        <button id="9" type="button" class="btn btn-light number">9</button>
+                        <button id="0" type="button" class="btn btn-light number">0</button>              
+                    </div>
+                    <div class="btn-group me-2" role="group" aria-label="Second group" style="width: 100%">
+                        <button id="a" type="button" class="btn btn-light letter">a</button>
+                        <button id="b" type="button" class="btn btn-light letter">b</button>
+                        <button id="c" type="button" class="btn btn-light letter">c</button>
+                        <button id="x" type="button" class="btn btn-light letter">x</button>
+                        <button id="y" type="button" class="btn btn-light letter">y</button>
+                        <button id="z" type="button" class="btn btn-light letter">z</button>
+                        <button id="pi" type="button" class="btn btn-light">pi</button>
+                        <button id="e" type="button" class="btn btn-light">e</button>
+                    </div>
+                    <div class="btn-group me-2" role="group" aria-label="Third group" style="width: 100%">
+                        <button id="suma" type="button" class="btn btn-light op">+</button>
+                        <button id="resta" type="button" class="btn btn-light op">-</button>
+                        <button id="mult" type="button" class="btn btn-light op">*</button>
+                        <button id="division" type="button" class="btn btn-light op">/</button>
+                        <button id="par-left" type="button" class="btn btn-light aux">(</button>
+                        <button id="par-right" type="button" class="btn btn-light aux">)</button>
+                        <button id="par-right" type="button" class="btn btn-light aux">.</button>
+                    </div>
+                    <div class="btn-group me-2" role="group" aria-label="Fourth group" style="width: 100%">
+                        <button id="exp" type="button" class="btn btn-light function">\[e^{x}\]</button>
+                        <button id="log" type="button" class="btn btn-light function">\[log({x})\]</button>
+                        <button id="cos" type="button" class="btn btn-light function">\[cos({x})\]</button>
+                        <button id="sen" type="button" class="btn btn-light function">\[sen({x})\]</button>
+                        <button id="tan" type="button" class="btn btn-light function">\[tan({x})\]</button>
+                        <button id="sqrt" type="button" class="btn btn-light function">\[\sqrt{x}\]</button>
+                        <button id="exp2" type="button" class="btn btn-light function">\(x^2\)</button>
+                        <button id="exp3" type="button" class="btn btn-light function">\(x^3\)</button>
+                        <button id="expy" type="button" class="btn btn-light function">\(x^y\)</button>
+                    </div>
+                    <div class="btn-group me-2" role="group" aria-label="Fifth group" style="width: 100%">
+                        <button id="calc" type="button" class="btn btn-light">=</button>
+                        <button id="clear" type="button" class="btn btn-light">C</button>
+                        <button id="erase" type="button" class="btn btn-light">E</button>
+                        <button id="test" type="button" class="btn btn-light">test</button>
+                    </div>
+                    <div class="btn-group me-2" role="group" aria-label="Sixth group" style="width: 100%">
+                        <button id="display" type="button" class="btn btn-light">Display</button>
+                        <button id="calculate" type="button" class="btn btn-light">Calculate</button>
+                    </div>
                 </div>
             </div>
             <div id="currentMode">
                 Current mode: Calculate
             </div>
-        </div>
-        <div id="inputDiv">
-            <output type="text" id="input">
-        </div>
+        </main>
     </div>
-    <div id="outputDiv" class="container">
-            <output type="text" id="output">
-        </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="script.js"></script>
