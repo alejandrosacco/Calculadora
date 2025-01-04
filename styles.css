@@ -1,33 +1,35 @@
 #cont{
     display: flex;
-    border: 1px solid black;
-    border-radius: 5px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 2%;
     background-color: #f0f0f0;
+    align-items: center;
+    border: 2px solid black;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5%;
 }
 
 #keyboard{
-    padding: 2%;
-    width: 50%;
+    margin: 5%;
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
-#inputDiv{
+#inputDiv, #outputDiv{
+    border: 2px solid black;
+    background-color: #cddeffd2;
+    margin: 3%;
     padding: 2%;
-    width: 100%;
-    border-left: 1px solid black;
-}
-
-#outputDiv{
-    width: 100%;
-    padding: 2%;
-    text-align: center;
-    background-color: #f0f0f0d2;
+    width: 75%;
+    border-radius: 2%;
 }
 
 #input{
     text-align: center;
     width: 100%;
     height: 100%;
-    background-color: #f0f0f0;
     font-size: 2em;
 }
 
@@ -35,7 +37,6 @@
     text-align: center;
     width: 100%;
     height: 100%;
-    background-color: #f0f0f0;
     font-size: 2em;
 }
 
